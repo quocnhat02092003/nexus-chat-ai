@@ -1,5 +1,5 @@
-import { ChatShell } from "@/app/_components/chat/ChatShell";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return <ChatShell />;
+  redirect("/login");
 }
