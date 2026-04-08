@@ -137,7 +137,7 @@ export function MessagePanel() {
               }
             >
               <div
-                className={`rounded-2xl px-4 py-3.5 text-[15px] leading-relaxed shadow-[0_6px_15px_rgba(67,84,108,0.1)] sm:px-5 sm:py-4 sm:text-[16px] md:text-[17px] ${
+                className={`rounded-2xl px-4 py-3.5 text-[15px] leading-relaxed shadow-[0_6px_15px_rgba(67,84,108,0.1)] sm:px-5 sm:py-4 sm:text-[13px] md:text-[15px] ${
                   message.sender === "me"
                     ? "rounded-tr-md bg-[#1763ce] text-white"
                     : "rounded-tl-md bg-[#dde4ed] text-[#1e2a38]"
@@ -221,19 +221,17 @@ export function MessagePanel() {
 
           <input
             type="text"
-            value=""
-            readOnly
             placeholder="Type a message..."
             className="h-9 min-w-0 flex-1 bg-transparent px-1.5 text-sm text-[#344255] outline-none placeholder:text-[#9aa6b5] sm:h-10 sm:px-2 sm:text-[15px]"
           />
 
           <button
             type="button"
-            className="grid h-9 w-9 place-items-center rounded-xl bg-[#1461d2] text-white shadow-[0_10px_18px_rgba(20,97,210,0.35)] transition hover:bg-[#0f56bd] sm:h-10 sm:w-10"
+            className="grid h-9 w-9 place-items-center rounded-xl bg-[#1461d2] text-white transition hover:bg-[#0f56bd] sm:h-10 sm:w-10"
             aria-label="Send"
           >
             <svg
-              className="h-5 w-5"
+              className="h-5 w-5 rotate-180"
               viewBox="0 0 24 24"
               fill="none"
               aria-hidden

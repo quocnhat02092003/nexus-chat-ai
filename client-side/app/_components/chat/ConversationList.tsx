@@ -1,4 +1,50 @@
 import { conversations } from "@/app/_components/chat/chat-data";
+import { Input } from "@/components/ui/input";
+
+const activeNow = [
+  {
+    id: "a1",
+    name: "Marcus Thorne",
+    initials: "MT",
+    isOnline: true,
+    color: "from-[#164f8f] to-[#3f8fd6]",
+  },
+  {
+    id: "a2",
+    name: "Zahra Hassan",
+    initials: "ZH",
+    isOnline: true,
+    color: "from-[#b8682a] to-[#f1a15e]",
+  },
+  {
+    id: "a3",
+    name: "Julian Baek",
+    initials: "JB",
+    isOnline: false,
+    color: "from-[#2a3646] to-[#5f6f81]",
+  },
+  {
+    id: "a4",
+    name: "Aria Montgomery",
+    initials: "AM",
+    isOnline: true,
+    color: "from-[#5a2d8f] to-[#8f5ad4]",
+  },
+  {
+    id: "a5",
+    name: "Liam O'Neill",
+    initials: "LO",
+    isOnline: false,
+    color: "from-[#19676d] to-[#3ea9af]",
+  },
+  {
+    id: "a6",
+    name: "Sienna Miller",
+    initials: "SM",
+    isOnline: true,
+    color: "from-[#8e3d63] to-[#cc6a95]",
+  },
+];
 
 function Avatar({ initials }: { initials?: string }) {
   if (initials) {
@@ -19,14 +65,14 @@ function Avatar({ initials }: { initials?: string }) {
 
 export function ConversationList() {
   return (
-    <section className="hidden h-full min-h-0 flex-col border-r border-[#d8dde6] bg-[#eff3f8] p-4 lg:flex lg:p-5">
+    <section className="hidden h-full min-h-0 grid-cols-1 border-r border-[#d8dde6] bg-[#eff3f8] p-4 lg:grid lg:grid-rows-[auto_auto_minmax(0,1fr)_auto] lg:p-5">
       <h2 className="text-2xl font-semibold tracking-tight text-[#1f2a37] lg:text-3xl">
         Messages
       </h2>
 
-      <div className="mt-4 flex h-11 items-center rounded-xl bg-[#dbe3ec] px-3 text-sm text-[#708095]">
+      <div className="relative mt-4">
         <svg
-          className="mr-2 h-4 w-4"
+          className="pointer-events-none absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-[#708095]"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -43,10 +89,41 @@ export function ConversationList() {
             strokeWidth="1.5"
           />
         </svg>
-        Search conversations...
+        <Input
+          type="search"
+          placeholder="Search conversations..."
+          className="h-11 pl-9"
+          aria-label="Search conversations"
+        />
       </div>
 
-      <ul className="mt-5 min-h-0 flex-1 space-y-2 overflow-y-auto pr-1">
+      <ul className="mt-5 min-h-0 space-y-2 overflow-y-auto pr-1">
+        <div className="text-sm font-semibold text-[#364a63]">Active</div>
+        <ul className="mt-3.5 flex gap-3 overflow-x-auto pb-1 pr-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+          {activeNow.map((item) => (
+            <li key={item.id} className="w-18 shrink-0">
+              <button type="button" className="group w-full text-center">
+                <div className="relative mx-auto w-fit">
+                  <div
+                    className={`grid h-14 w-14 place-items-center rounded-full bg-linear-to-br text-sm font-semibold text-white shadow-[0_8px_16px_rgba(28,48,78,0.24)] ${item.color}`}
+                  >
+                    {item.initials}
+                  </div>
+                  <span
+                    className={`absolute right-0 bottom-0 h-3.5 w-3.5 rounded-full border-2 border-white ${
+                      item.isOnline ? "bg-[#22c55e]" : "bg-[#bac7d8]"
+                    }`}
+                    aria-hidden
+                  />
+                </div>
+                <p className="mt-2 truncate text-[11px] font-semibold text-[#364a63] group-hover:text-[#1a5ab3]">
+                  {item.name}
+                </p>
+              </button>
+            </li>
+          ))}
+        </ul>
+        <div className="text-sm font-semibold text-[#364a63]">Chat</div>
         {conversations.map((conversation) => (
           <li key={conversation.id}>
             <button
