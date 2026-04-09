@@ -48,10 +48,10 @@ export function SettingsWorkspace() {
   return (
     <section className="grid min-h-0 min-w-0 grid-cols-1 lg:col-span-2">
       <div className="flex min-h-0 flex-col bg-[#e9edf3]">
-        <header className="border-b border-[#d6dde8] bg-[#f5f7fb] px-4 py-3 sm:px-6 lg:px-8">
+        <header className="border-b border-[#d6dde8] bg-[#f5f7fb] px-4 py-5 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-4">
             <h2 className="text-[32px] leading-none font-semibold tracking-[-0.03em] text-[#1d2836]">
-              Lumina Chat
+              Nexus Chat
             </h2>
             <nav className="hidden items-center gap-5 text-sm text-[#66768d] md:flex">
               <button type="button" className="transition hover:text-[#1e3048]">
@@ -286,7 +286,7 @@ export function SettingsWorkspace() {
               <section className="rounded-3xl border border-[#d8e0eb] bg-[#f8fafd] p-4 sm:p-5">
                 <div className="flex items-center gap-2 text-[#145dc7]">
                   <Palette className="h-4 w-4" aria-hidden />
-                  <h3 className="text-[25px] leading-none font-semibold tracking-[-0.03em] text-[#1f2a37]">
+                  <h3 className="text-[25px] leading-none font-semibold tracking-[-0.03em] text-[#c4d9f3]">
                     Appearance
                   </h3>
                 </div>
