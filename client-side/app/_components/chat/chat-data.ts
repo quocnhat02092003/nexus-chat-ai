@@ -33,8 +33,8 @@ export const navItems: NavItem[] = [
 
 export const conversations: Conversation[] = [
   {
-    id: "lumina",
-    name: "Lumina AI",
+    id: "chatter",
+    name: "chatter AI",
     preview: "I've analyzed those architectural sket...",
     time: "3m ago",
     active: true,

@@ -1,0 +1,76 @@
+### Register User - Valid Test Case 1
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "fullName": "Nguyễn Văn An",
+  "email": "nguyenan@example.com",
+  "password": "SecurePass123!",
+  "confirmPassword": "SecurePass123!"
+}
+
+### Register User - Valid Test Case 2
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "fullName": "Trần Thị B",
+  "email": "tranthib@example.com",
+  "password": "MyPassword456@",
+  "confirmPassword": "MyPassword456@"
+}
+
+### Register User - Valid Test Case 3
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "fullName": "Phạm Minh C",
+  "email": "phamminc@example.com",
+  "password": "Test12345678",
+  "confirmPassword": "Test12345678"
+}
+
+### Register User - Password Mismatch (Should Fail)
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "fullName": "Lỗi Test",
+  "email": "error@example.com",
+  "password": "Correct123456",
+  "confirmPassword": "Wrong123456"
+}
+
+### Register User - Short Password (Should Fail)
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "fullName": "Lỗi Test",
+  "email": "error2@example.com",
+  "password": "Short12",
+  "confirmPassword": "Short12"
+}
+
+### Register User - Invalid Email (Should Fail)
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "fullName": "Lỗi Test",
+  "email": "invalid-email",
+  "password": "ValidPass123",
+  "confirmPassword": "ValidPass123"
+}
+
+### Register User - Empty Fields (Should Fail)
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "fullName": "",
+  "email": "",
+  "password": "",
+  "confirmPassword": ""
+}

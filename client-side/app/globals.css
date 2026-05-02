@@ -132,3 +132,53 @@ body {
     @apply font-sans;
   }
 }
+
+.cobe-label {
+  position: absolute;
+  z-index: 10;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #1447ff;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  box-shadow: 0 6px 14px rgba(20, 71, 255, 0.25);
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  translate: -50% 0;
+}
+
+.cobe-label-eu {
+  position-anchor: --cobe-eu;
+  left: anchor(center);
+  bottom: anchor(top);
+  margin-bottom: 8px;
+  opacity: var(--cobe-visible-eu, 0);
+}
+
+.cobe-label-mena {
+  position-anchor: --cobe-mena;
+  left: anchor(center);
+  bottom: anchor(top);
+  margin-bottom: 8px;
+  opacity: var(--cobe-visible-mena, 0);
+}
+
+.cobe-label-asia {
+  position-anchor: --cobe-asia;
+  left: anchor(center);
+  bottom: anchor(top);
+  margin-bottom: 8px;
+  opacity: var(--cobe-visible-asia, 0);
+}
+
+.cobe-label-apac {
+  position-anchor: --cobe-apac;
+  left: anchor(center);
+  bottom: anchor(top);
+  margin-bottom: 8px;
+  opacity: var(--cobe-visible-apac, 0);
+}

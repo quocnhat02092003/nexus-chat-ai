@@ -45,7 +45,7 @@ export default async function AuthRequiredPage({
             href="/"
             className="font-medium text-[#49576c] transition hover:text-[#233149]"
           >
-            Tìm hiểu thêm về Lumina
+            Tìm hiểu thêm về chatter
           </Link>
         </p>
       </section>

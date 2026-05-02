@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { Apple, ArrowRight, AtSign, Eye, Globe, Lock } from "lucide-react";
+import Cobe from "../_components/cobe/Cobe";
 
 export default function LoginRoute() {
   return (
@@ -12,16 +13,8 @@ export default function LoginRoute() {
         <aside className="relative overflow-hidden bg-[linear-gradient(180deg,#0f64d4_0%,#1875e7_58%,#2287f6_100%)] p-8 text-white sm:p-10 lg:p-12">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_90%_100%,rgba(255,255,255,0.2),transparent_44%)]" />
           <div className="relative flex h-full flex-col">
-            <p className="text-[34px] font-extrabold underline">Nexus Chat</p>
-
-            <h1 className="mt-10 max-w-[11ch] text-[42px] leading-[1.08] font-extrabold sm:text-[48px]">
-              Continue your conversation journey.
-            </h1>
-
-            <p className="mt-6 max-w-[30ch] text-[20px] leading-relaxed text-white/88">
-              Sign in to reconnect with your community, ideas, and AI-powered
-              conversations.
-            </p>
+            <p className="text-[50px] font-extrabold">chatter</p>
+            <Cobe />
 
             <div className="mt-12 flex items-center gap-2">
               <span className="grid h-10 w-10 place-items-center rounded-full border-2 border-white/80 bg-[#6daef7] text-sm font-semibold text-white">
@@ -166,7 +159,7 @@ export default function LoginRoute() {
       </section>
 
       <p className="absolute bottom-5 text-center text-[11px] text-[#9ca4af]">
-        © {new Date().getFullYear()} Nexus Chat. All rights reserved.
+        © {new Date().getFullYear()} chatter. All rights reserved.
       </p>
     </main>
   );

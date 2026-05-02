@@ -55,7 +55,7 @@ export function MessagePanel() {
           </div>
           <div>
             <p className="text-[15px] font-semibold text-[#0f1c2b] sm:text-base md:text-lg">
-              Lumina AI
+              chatter AI
             </p>
             <p className="text-[11px] font-semibold text-[#2d73d4]">Online</p>
           </div>
