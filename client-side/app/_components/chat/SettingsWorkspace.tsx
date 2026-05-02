@@ -51,7 +51,7 @@ export function SettingsWorkspace() {
         <header className="border-b border-[#d6dde8] bg-[#f5f7fb] px-4 py-5 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-4">
             <h2 className="text-[32px] leading-none font-semibold tracking-[-0.03em] text-[#1d2836]">
-              Nexus Chat
+              chatter
             </h2>
             <nav className="hidden items-center gap-5 text-sm text-[#66768d] md:flex">
               <button type="button" className="transition hover:text-[#1e3048]">
@@ -118,7 +118,7 @@ export function SettingsWorkspace() {
                   Profile
                 </h3>
                 <p className="mt-1 text-sm text-[#637388]">
-                  Manage how others see you on Lumina Chat.
+                  Manage how others see you on chatter.
                 </p>
 
                 <div className="mt-5 grid gap-4 md:grid-cols-[auto_minmax(0,1fr)]">
@@ -166,7 +166,7 @@ export function SettingsWorkspace() {
                       </span>
                       <input
                         type="text"
-                        value="alex.m@lumina.chat"
+                        value="alex.m@chatter.chat"
                         readOnly
                         className="h-11 w-full rounded-lg border border-[#d6dfe9] bg-[#dfe6ee] px-3 text-sm text-[#32465f]"
                       />

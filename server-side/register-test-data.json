@@ -1,0 +1,127 @@
+{
+  "testCases": [
+    {
+      "name": "Valid Registration - Case 1",
+      "method": "POST",
+      "url": "http://localhost:5000/api/auth/register",
+      "body": {
+        "fullName": "Nguyễn Văn An",
+        "email": "nguyenan@example.com",
+        "password": "SecurePass123!",
+        "confirmPassword": "SecurePass123!"
+      },
+      "expectedStatus": 200,
+      "description": "Đăng ký người dùng hợp lệ"
+    },
+    {
+      "name": "Valid Registration - Case 2",
+      "method": "POST",
+      "url": "http://localhost:5000/api/auth/register",
+      "body": {
+        "fullName": "Trần Thị B",
+        "email": "tranthib@example.com",
+        "password": "MyPassword456@",
+        "confirmPassword": "MyPassword456@"
+      },
+      "expectedStatus": 200,
+      "description": "Đăng ký người dùng khác"
+    },
+    {
+      "name": "Valid Registration - Case 3",
+      "method": "POST",
+      "url": "http://localhost:5000/api/auth/register",
+      "body": {
+        "fullName": "Phạm Minh C",
+        "email": "phamminc@example.com",
+        "password": "Test12345678",
+        "confirmPassword": "Test12345678"
+      },
+      "expectedStatus": 200,
+      "description": "Đăng ký người dùng thứ ba"
+    },
+    {
+      "name": "Error - Password Mismatch",
+      "method": "POST",
+      "url": "http://localhost:5000/api/auth/register",
+      "body": {
+        "fullName": "Test Error",
+        "email": "testerror@example.com",
+        "password": "Correct123456",
+        "confirmPassword": "Wrong123456"
+      },
+      "expectedStatus": 400,
+      "expectedError": "Passwords do not match",
+      "description": "Kiểm tra xác thực - mật khẩu không khớp"
+    },
+    {
+      "name": "Error - Password Too Short",
+      "method": "POST",
+      "url": "http://localhost:5000/api/auth/register",
+      "body": {
+        "fullName": "Test Error",
+        "email": "testerror2@example.com",
+        "password": "Short12",
+        "confirmPassword": "Short12"
+      },
+      "expectedStatus": 400,
+      "expectedError": "Password must be at least 8 characters",
+      "description": "Kiểm tra xác thực - mật khẩu quá ngắn"
+    },
+    {
+      "name": "Error - Invalid Email",
+      "method": "POST",
+      "url": "http://localhost:5000/api/auth/register",
+      "body": {
+        "fullName": "Test Error",
+        "email": "invalid-email",
+        "password": "ValidPass123",
+        "confirmPassword": "ValidPass123"
+      },
+      "expectedStatus": 400,
+      "expectedError": "Email is invalid",
+      "description": "Kiểm tra xác thực - email không hợp lệ"
+    },
+    {
+      "name": "Error - Empty Email",
+      "method": "POST",
+      "url": "http://localhost:5000/api/auth/register",
+      "body": {
+        "fullName": "Test Error",
+        "email": "",
+        "password": "ValidPass123",
+        "confirmPassword": "ValidPass123"
+      },
+      "expectedStatus": 400,
+      "expectedError": "Email is required",
+      "description": "Kiểm tra xác thực - email rỗng"
+    },
+    {
+      "name": "Error - Empty Full Name",
+      "method": "POST",
+      "url": "http://localhost:5000/api/auth/register",
+      "body": {
+        "fullName": "",
+        "email": "test@example.com",
+        "password": "ValidPass123",
+        "confirmPassword": "ValidPass123"
+      },
+      "expectedStatus": 400,
+      "expectedError": "Full name is required",
+      "description": "Kiểm tra xác thực - tên đầy đủ rỗng"
+    },
+    {
+      "name": "Error - Full Name Too Long",
+      "method": "POST",
+      "url": "http://localhost:5000/api/auth/register",
+      "body": {
+        "fullName": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit",
+        "email": "test@example.com",
+        "password": "ValidPass123",
+        "confirmPassword": "ValidPass123"
+      },
+      "expectedStatus": 400,
+      "expectedError": "Full name must not exceed 200 characters",
+      "description": "Kiểm tra xác thực - tên quá dài"
+    }
+  ]
+}
